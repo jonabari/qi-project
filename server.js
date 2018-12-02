@@ -1,29 +1,18 @@
 const express = require('express')
 const app = express()
-const serveStatic = require('serve-static')
-const path = require('path')
-
 
 const PORT = process.env.PORT || 8080
 
-let allowCrossDomain = function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
-}
-
+});
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-app.use(serveStatic(path.join(__dirname, 'public')))
-app.use(express.bodyParser());
-app.use(express.cookieParser());
-app.use(express.session({ secret: 'secret' }));
-app.use(express.methodOverride());
-app.use(allowCrossDomain);
-require('./routes/html-routes.js')(app)
+app.use(express.static(__dirname + '/public'));
 
+require('./routes/html-routes.js')(app)
 
 app.listen(PORT, function () {
     console.log(`Now listening on PORT: ${PORT}`)
