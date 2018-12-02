@@ -7,10 +7,10 @@ let city
 let modal = document.getElementById('menuModal')
 
 function getCityName() {
-    if (document.URL.indexOf('localhost:8080/cdmx') >= 0) { city = cdmx }
-    if (document.URL.indexOf('localhost:8080/nyc') >= 0) { city = nyc }
-    if (document.URL.indexOf('localhost:8080/dallas') >= 0) { city = dallas }
-    if (document.URL.indexOf('localhost:8080/denver') >= 0) { city = denver }
+    if (document.URL.indexOf('https://qi-project.herokuapp.com/cdmx') >= 0) { city = cdmx }
+    if (document.URL.indexOf('https://qi-project.herokuapp.com/nyc') >= 0) { city = nyc }
+    if (document.URL.indexOf('https://qi-project.herokuapp.com/dallas') >= 0) { city = dallas }
+    if (document.URL.indexOf('https://qi-project.herokuapp.com/denver') >= 0) { city = denver }
     renderCity()
 }
 
@@ -22,7 +22,6 @@ function renderCity() {
 }
 
 function GetAQI() {
-
     let key = 'E0A84CAA-864F-41AA-BDF7-100EFA2048E4'
     let URL = `https://www.airnowapi.org/aq/observation/latLong/current/?format=application/json&latitude=${city.lat}&longitude=${city.lon}&distance=25&API_KEY=${key}`
 
