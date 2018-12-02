@@ -17,8 +17,11 @@ let allowCrossDomain = function (req, res, next) {
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(serveStatic(path.join(__dirname, 'public')))
-app.use(allowCrossDomain)
-
+app.use(express.bodyParser());
+app.use(express.cookieParser());
+app.use(express.session({ secret: 'secret' }));
+app.use(express.methodOverride());
+app.use(allowCrossDomain);
 require('./routes/html-routes.js')(app)
 
 
