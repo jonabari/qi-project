@@ -1,0 +1,280 @@
+@font-face {
+    font-family: 'kylefont1';
+    src: url('../fonts/KyleFont1.otf');
+    font-family: 'TensentypeXingKaiF';
+    src: url('../fonts/TensentypeXingKaiF.ttf');
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* -------- AQI TEXT (Chinese Script) -------- */
+.aqiText {
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    z-index: 3;
+}
+
+.locationName, .openMenu, #airQualityIndexName, #airQualityIndexNumber{
+    font-family: 'TensentypeXingKaiF';
+    background-color: rgba(255,255,255,.6);
+    border-radius: 2em;
+    -webkit-box-shadow: 0px 0px 50px 30px rgba(255,255,255,.6);
+    -moz-box-shadow: 0px 0px 50px 30px rgba(255,255,255,.6);
+    box-shadow: 0px 0px 50px 30px rgba(255,255,255,.6);
+    text-shadow: 0em 0em .4em rgba(255, 255, 255, 1);
+    /* color: gray; */
+}
+
+#airQualityIndexNumber {
+    font-size: 8em;
+    margin: 0px 0px 0px 0px;
+}
+
+#airQualityIndexName {
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    font-size: 2em;
+    margin: 0px 0px 0px 0px;
+}
+
+#selectedLocation {
+    position: absolute;
+    right: 10%;
+    bottom: 7%;
+    z-index: 2;
+}
+
+.locationName, .openMenu{
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    font-size: 4em;
+    margin: 0px 0px 0px 0px;
+}
+
+.locationName:hover, .openMenu:hover {
+    opacity: .7;
+}
+
+.locationName:active, .openMenu:active {
+    color: red;
+}
+
+/* -------- LOCATION MENU -------- */
+
+#locationList {
+    width: 25em;
+    position: absolute;
+    bottom: 4em;
+}
+
+.locationListItem {
+    display: inline-block;
+    position: relative;
+    bottom: 0px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(255,255,255,.8);
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+
+.modal-content {
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+#menuCloseButton {
+    position: fixed;
+    height: 1.5em;
+    width: 1.5em;
+    background-image: url('../images/icon-X.svg');
+    bottom: 2em;
+    right: 2em;
+}
+
+#menuCloseButton:hover {
+    opacity: .7;
+}
+
+#menuCloseButton:active {
+    opacity: .5;
+}
+
+/* Modal Animation */
+
+@-webkit-keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+/* -------- BACKGROUND PAINTING -------- */
+.backgroundPainting {
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+/* .checkFunctions {
+position: absolute;
+left: 1.5em;
+bottom: 25%;
+z-index: 2;
+} */
+
+/*Overlay*/
+#display-fog {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+1,ffffff+51,ffffff+100&0+1,0.6+40,1+99 */
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 1%, rgba(255,255,255,0.6) 80%, rgba(255,255,255,0.67) 51%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 1%,rgba(255,255,255,0.6) 80%,rgba(255,255,255,0.67) 51%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 1%,rgba(255,255,255,0.6) 80%,rgba(255,255,255,0.67) 51%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+.st0 {
+    opacity:0.9;
+}
+.st1 {
+    fill:#A5A7AA;
+}
+.st2 {
+    fill:#C2C4C6;
+}
+.st3 {
+    fill:#CFD1D2;
+}
+.st4 {
+    fill:#C9CACC;
+}
+.st5 {
+    fill:#AFB1B4;
+}
+.st6 {
+    fill:#B3B5B8;
+}
+.st7 {
+    fill:#8D9092;
+}
+.st8 {
+    fill:#97999C;
+}
+.st9 {
+    fill:#9D9FA2;
+}
+.st10 {
+    fill:#E2E3E4;
+}
+.st11 {
+    fill:#DCDDDE;
+}
+.st12 {
+    fill:#DCDDDE;
+}
+.st13 {
+    opacity:0.78;
+}
+.st14 {
+    opacity:0.76;
+}
+.st15 {
+    fill:none;stroke:#000000;stroke-miterlimit:10;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* POLLUTION-INDEX */
+
+.severe {
+    color: red !important;
+}
+
+.heavy {
+    color: purple !important;
+}
+
+.moderate {
+    color: red !important;
+}
+
+.light {
+    color: orange !important;
+}
+
+.good {
+    color: gold !important;
+}
+
+.excellent {
+    color: #47bf2e !important;
+}
