@@ -1,11 +1,14 @@
 {
   "name": "qi-project",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "dependencies": {
+    "axios": "^0.18.0",
     "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "https": "^1.0.0",
+    "jquery": "^3.3.1",
     "nodemon": "^1.18.7",
     "path": "^0.12.7",
     "serve-static": "^1.13.2"
@@ -25,5 +28,6 @@
   "bugs": {
     "url": "https://github.com/jonabari/qi-project/issues"
   },
-  "homepage": "https://github.com/jonabari/qi-project#readme"
+  "homepage": "https://github.com/jonabari/qi-project#readme",
+  "description": ""
 }

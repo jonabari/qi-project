@@ -10,10 +10,6 @@ a:link, a:visited {
     color: black;
 }
 
-body {
-    overflow: hidden;
-}
-
 /* -------- AQI TEXT (Chinese Script) -------- */
 .aqiText {
     position: absolute;
@@ -70,9 +66,11 @@ body {
 /* -------- LOCATION MENU -------- */
 
 #locationList {
-    width: 25em;
+    min-width: 300%;
     position: absolute;
     bottom: 4em;
+    overflow: scroll;
+    white-space: nowrap;
 }
 
 .locationListItem {
@@ -96,11 +94,12 @@ body {
     animation-duration: 0.4s;
 }
 
+
 .modal-content {
     position: fixed;
     bottom: 0;
     background-color: #fefefe;
-    width: 100%;
+    margin: 1em;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
@@ -166,6 +165,46 @@ body {
     }
 }
 
+@-webkit-keyframes slideOut {
+    from {
+        bottom: 0;
+        opacity: -300px
+    }
+    to {
+        bottom: 1;
+        opacity: 0
+    }
+}
+
+@keyframes slideOut {
+    from {
+        bottom: 0;
+        opacity: -300px
+    }
+    to {
+        bottom: 1;
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
+}
+
 /* -------- BACKGROUND PAINTING -------- */
 .backgroundPainting {
     height: 100%;
@@ -174,16 +213,9 @@ body {
     z-index: -1;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center top;
+    background-position: center;
     background-attachment: fixed;
 }
-
-/* .checkFunctions {
-position: absolute;
-left: 1.5em;
-bottom: 25%;
-z-index: 2;
-} */
 
 /*Overlay*/
 #display-fog {
@@ -200,79 +232,26 @@ z-index: 2;
     z-index: 1;
 }
 
-.st0 {
-    opacity:0.9;
-}
-.st1 {
-    fill:#A5A7AA;
-}
-.st2 {
-    fill:#C2C4C6;
-}
-.st3 {
-    fill:#CFD1D2;
-}
-.st4 {
-    fill:#C9CACC;
-}
-.st5 {
-    fill:#AFB1B4;
-}
-.st6 {
-    fill:#B3B5B8;
-}
-.st7 {
-    fill:#8D9092;
-}
-.st8 {
-    fill:#97999C;
-}
-.st9 {
-    fill:#9D9FA2;
-}
-.st10 {
-    fill:#E2E3E4;
-}
-.st11 {
-    fill:#DCDDDE;
-}
-.st12 {
-    fill:#DCDDDE;
-}
-.st13 {
-    opacity:0.78;
-}
-.st14 {
-    opacity:0.76;
-}
-.st15 {
-    fill:none;stroke:#000000;stroke-miterlimit:10;
-}
-
-ul {
-    list-style-type: none;
-}
-
 /* POLLUTION-INDEX */
 
 .severe {
-    color: red !important;
-}
-
-.heavy {
     color: purple !important;
 }
 
-.moderate {
+.heavy {
     color: red !important;
 }
 
-.light {
+.moderate {
     color: orange !important;
 }
 
-.good {
+.light {
     color: gold !important;
+}
+
+.good {
+    color:green !important;
 }
 
 .excellent {

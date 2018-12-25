@@ -5,24 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>city qi</title>
 </head>
 
 <body>
-    <h1>Welcome to city qi!</h1>
-    <h3>This is a temporary landing page. Please select a city from the list:</h3>
-    <li>
-        <a href="https://qi-project.herokuapp.com/cdmx">Mexico City</a>
-    </li>
-    <li>
-        <a href="https://qi-project.herokuapp.com/nyc">New York City</a>
-    </li>
-    <li>
-        <a href="https://qi-project.herokuapp.com/dallas">Dallas</a>
-    </li>
-    <li>
-        <a href="https://qi-project.herokuapp.com/denver">Denver</a>
-    </li>
+    <div id="painting" class="backgroundPainting"></div>
+    <div class="aqiText">
+        <p id="airQualityIndexNumber"></p>
+        <p id="airQualityIndexName"></p>
+    </div>
+    <div id="selectedLocation">
+        <p class="openMenu"></p>
+    </div>
+    <div id="display-fog"></div>
+
+        <!-- Modal -->
+    <div id="menuModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="menu">
+                    <ul id="locationList">
+                        <li id="listCdmx" class="locationName locationListItem"><a href="cdmx"> 墨西哥成</a></li>
+                        <li id="listNy" class="locationName locationListItem"><a href="nyc">纽约</a></li>
+                        <li id="listDallas" class="locationName locationListItem" data-name="dallas"> <a href="dallas">达拉斯</a></li>
+                        <li id="listDenver" class="locationName locationListItem" data-name="denver"> <a href="denver">丹佛</a></li>
+                        <li id="listShanghai" class="locationName locationListItem" data-name="shanghai"> <a href="shanghai">上海</a></li>
+                    </ul>
+                    <div id="menuCloseButton"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../javascript/logic.js"></script>
 </body>
 
 </html>
