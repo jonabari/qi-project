@@ -11,6 +11,7 @@ getCityName = () => {
 
     switch (location) {
         case 'cdmx':
+        case '':
             city = cdmx
             break
         case 'nyc':
